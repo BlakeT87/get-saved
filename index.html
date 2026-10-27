@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find Peace with God</title>
+<meta name="description" content="A simple, step-by-step walk through the good news of Jesus and a prayer to begin a relationship with God.">
+<meta name="theme-color" content="#1e2a44">
+<meta property="og:title" content="Find Peace with God">
+<meta property="og:description" content="A simple, step-by-step walk through the good news of Jesus. It takes about three minutes.">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    --bg: #fbf8f2;
+    --ink: #1e2a44;
+    --muted: #5b6579;
+    --card: #ffffff;
+    --accent: #c8862a;
+    --accent-ink: #ffffff;
+    --line: #e7dfd0;
+    --hero: linear-gradient(160deg, #1e2a44 0%, #35507e 100%);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12182a;
+      --ink: #f1ede4;
+      --muted: #a9b2c4;
+      --card: #1b2440;
+      --line: #2c3757;
+      --hero: linear-gradient(160deg, #0c1222 0%, #24365a 100%);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 18px/1.65 Georgia, "Iowan Old Style", "Times New Roman", serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  h1, h2, .btn, .small, .progress { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 20px; }
+  .hero {
+    background: var(--hero);
+    color: #fff;
+    text-align: center;
+    padding: 72px 0 64px;
+  }
+  .hero h1 { font-size: clamp(2rem, 7vw, 3rem); line-height: 1.15; margin: 0 0 16px; letter-spacing: -.01em; }
+  .hero p { font-size: 1.15rem; margin: 0 auto 28px; max-width: 30em; opacity: .93; }
+  .btn {
+    display: inline-block;
+    min-height: 48px;
+    padding: 13px 28px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .btn:focus-visible, a:focus-visible { outline: 3px solid #7fb3ff; outline-offset: 3px; }
+  .btn.ghost { background: transparent; color: var(--ink); border: 2px solid var(--line); }
+  .small { font-size: .9rem; color: var(--muted); }
+  .hero .small { color: #fff; opacity: .75; margin-top: 18px; }
+
+  .progress {
+    position: sticky; top: 0; z-index: 5;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 0;
+    font-size: .85rem;
+    color: var(--muted);
+  }
+  .bar { height: 6px; background: var(--line); border-radius: 3px; margin-top: 6px; overflow: hidden; }
+  .bar > i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .3s; }
+
+  .step { padding: 56px 0 8px; }
+  .step .num {
+    font: 700 .85rem system-ui, sans-serif;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .step h2 { font-size: 1.8rem; line-height: 1.2; margin: 6px 0 14px; }
+  blockquote {
+    margin: 22px 0;
+    padding: 18px 20px;
+    background: var(--card);
+    border-left: 5px solid var(--accent);
+    border-radius: 8px;
+    font-style: italic;
+  }
+  blockquote cite { display: block; margin-top: 8px; font: normal .9rem system-ui, sans-serif; color: var(--muted); }
+  .next { margin: 26px 0 0; }
+
+  .prayer {
+    background: var(--card);
+    border: 2px solid var(--accent);
+    border-radius: 14px;
+    padding: 24px 22px;
+    margin: 22px 0;
+    font-size: 1.12rem;
+  }
+  .prayer p { margin: 0; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+
+  .joy { text-align: center; }
+  .steps-list { padding-left: 1.2em; }
+  .steps-list li { margin-bottom: 10px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin: 22px 0; }
+  footer { padding: 56px 0 72px; text-align: center; }
+  footer a { color: inherit; }
+  #sec-after { display: none; }
+  #sec-after.show { display: block; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .bar > i { transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>God loves you.<br>He wants you in His family.</h1>
+    <p>Take three quiet minutes. We’ll walk through the good news of Jesus, one step at a time, and end with a simple prayer.</p>
+    <a class="btn" href="#step1">Begin</a>
+    <p class="small">Free. Private. Nothing to sign up for.</p>
+  </div>
+</header>
+
+<div class="progress" aria-hidden="true">
+  <div class="wrap">
+    <span id="plabel">Ready to begin</span>
+    <div class="bar"><i id="pbar"></i></div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="step" id="step1" data-step="1">
+    <div class="num">Step 1 of 5</div>
+    <h2>God made you, and He loves you.</h2>
+    <p>You are not an accident. God created you on purpose, knows you by name, and wants to be close to you, right now, exactly as you are.</p>
+    <blockquote>“For God so loved the world, that he gave his only born Son, that whoever believes in him should not perish, but have eternal life.”<cite>John 3:16 (WEB)</cite></blockquote>
+    <a class="btn next" href="#step2">Next</a>
+  </section>
+
+  <section class="step" id="step2" data-step="2">
+    <div class="num">Step 2 of 5</div>
+    <h2>Sin has separated us from Him.</h2>
+    <p>Every one of us has done wrong, and has gone our own way instead of God’s. The Bible calls this sin. It builds a wall between us and a holy God, and we can’t take it down ourselves.</p>
+    <blockquote>“For all have sinned, and fall short of the glory of God.”<cite>Romans 3:23 (WEB)</cite></blockquote>
+    <a class="btn next" href="#step3">Next</a>
+  </section>
+
+  <section class="step" id="step3" data-step="3">
+    <div class="num">Step 3 of 5</div>
+    <h2>Jesus paid the price for you.</h2>
+    <p>God didn’t leave us stuck. Jesus, God’s Son, lived the perfect life we couldn’t. He died on the cross to take the punishment for our sin, and He rose from the dead, defeating death. Forgiveness and new life are a gift, not something you earn.</p>
+    <blockquote>“But God commends his own love toward us, in that while we were yet sinners, Christ died for us.”<cite>Romans 5:8 (WEB)</cite></blockquote>
+    <blockquote>“For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord.”<cite>Romans 6:23 (WEB)</cite></blockquote>
+    <a class="btn next" href="#step4">Next</a>
+  </section>
+
+  <section class="step" id="step4" data-step="4">
+    <div class="num">Step 4 of 5</div>
+    <h2>You receive this gift by faith.</h2>
+    <p>You don’t need to clean up your life first. You simply turn from going your own way, believe that Jesus died and rose for you, and invite Him to be your Lord and Savior.</p>
+    <blockquote>“If you will confess with your mouth that Jesus is Lord, and believe in your heart that God raised him from the dead, you will be saved.”<cite>Romans 10:9 (WEB)</cite></blockquote>
+    <p>If that is what you want, you can tell God right now. Prayer is just talking to Him.</p>
+    <a class="btn next" href="#step5">Continue to the prayer</a>
+  </section>
+
+  <section class="step" id="step5" data-step="5">
+    <div class="num">Step 5 of 5</div>
+    <h2>Pray this out loud, or in your heart.</h2>
+    <p>These exact words aren’t magic. God looks at your heart. If you mean it, pray along:</p>
+    <div class="prayer">
+      <p>Dear God,<br><br>
+      I know I’m not perfect, and I’ve sinned. I’m sorry, and I want to turn away from it.<br><br>
+      I believe that Jesus is Your Son, that He died on the cross for my sins, and that You raised Him from the dead.<br><br>
+      Jesus, I ask You to forgive me. Come into my life. Be my Lord and my Savior.<br><br>
+      Thank You for loving me, for saving me, and for making me part of Your family.<br><br>
+      In Jesus’ name, Amen.</p>
+    </div>
+    <div class="actions">
+      <button class="btn" id="prayed" type="button">I prayed this prayer</button>
+      <button class="btn ghost" id="notyet" type="button">I have questions</button>
+    </div>
+    <div class="card" id="questions" hidden>
+      <p><strong>That’s okay. Questions are welcome.</strong> You can re-read the steps above at your own pace. Talking with a real person helps too. Reach out to the person who shared this page with you, or to a local Bible-believing church. You are welcome to ask anything.</p>
+      <a class="btn ghost" href="#step1">Start over</a>
+    </div>
+  </section>
+
+  <section class="step joy" id="sec-after" tabindex="-1">
+    <div class="num">Welcome</div>
+    <h2>Welcome to God’s family! 🎉</h2>
+    <p>The Bible says heaven celebrates when one person turns to God. What you just did is the most important decision of your life.</p>
+    <div class="card" style="text-align:left">
+      <strong>Your next steps</strong>
+      <ol class="steps-list">
+        <li><strong>Tell someone.</strong> Share your decision with a Christian friend or the person who gave you this page.</li>
+        <li><strong>Read the Bible.</strong> Start with the Gospel of John.</li>
+        <li><strong>Talk to God daily.</strong> Prayer is simply a conversation.</li>
+        <li><strong>Find a church.</strong> Grow alongside others who follow Jesus.</li>
+        <li><strong>Be baptized.</strong> It’s a public celebration of your new life.</li>
+      </ol>
+    </div>
+    <p class="small">Want to pass this on? <button class="btn ghost" id="share" type="button">Share this page</button></p>
+  </section>
+
+</main>
+
+<footer class="wrap small">
+  <p>Scripture quotations are from the World English Bible (WEB), public domain.</p>
+</footer>
+
+<script>
+(function () {
+  var steps = document.querySelectorAll('.step[data-step]');
+  var bar = document.getElementById('pbar');
+  var label = document.getElementById('plabel');
+
+  // Update progress bar from the step currently in view
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var n = +e.target.getAttribute('data-step');
+        bar.style.width = (n / steps.length * 100) + '%';
+        label.textContent = 'Step ' + n + ' of ' + steps.length;
+      });
+    }, { rootMargin: '-40% 0px -50% 0px' });
+    steps.forEach(function (s) { io.observe(s); });
+  }
+
+  document.getElementById('prayed').addEventListener('click', function () {
+    var after = document.getElementById('sec-after');
+    after.classList.add('show');
+    document.getElementById('questions').hidden = true;
+    bar.style.width = '100%';
+    label.textContent = 'Welcome to the family';
+    after.scrollIntoView();
+    after.focus({ preventScroll: true });
+  });
+
+  document.getElementById('notyet').addEventListener('click', function () {
+    document.getElementById('questions').hidden = false;
+  });
+
+  document.getElementById('share').addEventListener('click', function () {
+    var data = { title: document.title, url: location.href.split('#')[0] };
+    if (navigator.share) { navigator.share(data).catch(function () {}); }
+    else if (navigator.clipboard) {
+      navigator.clipboard.writeText(data.url).then(function () { alert('Link copied!'); });
+    }
+  });
+})();
+</script>
+</body>
+</html>

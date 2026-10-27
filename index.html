@@ -113,6 +113,16 @@
   .steps-list { padding-left: 1.2em; }
   .steps-list li { margin-bottom: 10px; }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin: 22px 0; }
+  .followup label { display: block; margin: 14px 0 4px; font: 600 .9rem system-ui, sans-serif; }
+  .followup input[type=text] {
+    width: 100%; min-height: 48px; padding: 10px 14px;
+    font: 1rem system-ui, sans-serif; color: var(--ink); background: var(--bg);
+    border: 2px solid var(--line); border-radius: 10px;
+  }
+  .followup input[type=text]:focus-visible { outline: 3px solid #7fb3ff; outline-offset: 2px; }
+  .followup .btn { margin-top: 18px; }
+  .followup .status { margin: 12px 0 0; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
   footer { padding: 56px 0 72px; text-align: center; }
   footer a { color: inherit; }
   #sec-after { display: none; }
@@ -194,6 +204,17 @@
       <p><strong>That’s okay. Questions are welcome.</strong> You can re-read the steps above at your own pace. Talking with a real person helps too. Reach out to the person who shared this page with you, or to a local Bible-believing church. You are welcome to ask anything.</p>
       <a class="btn ghost" href="#step1">Start over</a>
     </div>
+    <form class="card followup" data-context="questions" hidden>
+      <strong>Want someone to follow up with you?</strong>
+      <p class="small">Totally optional. Share only what you’re comfortable with. Your details go to our small follow-up team and nobody else.</p>
+      <label for="name-questions">First name (optional)</label>
+      <input id="name-questions" name="name" type="text" maxlength="60" autocomplete="given-name">
+      <label for="contact-questions">Phone or email</label>
+      <input id="contact-questions" name="contact" type="text" maxlength="120" autocomplete="off" required>
+      <input class="hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Send</button>
+      <p class="small status" role="status" aria-live="polite"></p>
+    </form>
   </section>
 
   <section class="step joy" id="sec-after" tabindex="-1">
@@ -210,6 +231,17 @@
         <li><strong>Be baptized.</strong> It’s a public celebration of your new life.</li>
       </ol>
     </div>
+<form class="card followup" data-context="prayed" hidden>
+      <strong>Want someone to follow up with you?</strong>
+      <p class="small">Totally optional. Share only what you’re comfortable with. Your details go to our small follow-up team and nobody else.</p>
+      <label for="name-prayed">First name (optional)</label>
+      <input id="name-prayed" name="name" type="text" maxlength="60" autocomplete="given-name">
+      <label for="contact-prayed">Phone or email</label>
+      <input id="contact-prayed" name="contact" type="text" maxlength="120" autocomplete="off" required>
+      <input class="hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Send</button>
+      <p class="small status" role="status" aria-live="polite"></p>
+    </form>
     <p class="small">Want to pass this on? <button class="btn ghost" id="share" type="button">Share this page</button></p>
   </section>
 
@@ -221,6 +253,34 @@
 
 <script>
 (function () {
+  // Paste your Google Apps Script web app URL here (see README). Leave empty to hide the follow-up forms.
+  var ENDPOINT = '';
+
+  var forms = document.querySelectorAll('.followup');
+  forms.forEach(function (f) {
+    f.hidden = !ENDPOINT;
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var status = f.querySelector('.status');
+      var btn = f.querySelector('button');
+      var fd = new FormData(f);
+      if (fd.get('website')) { status.textContent = 'Thank you!'; return; }
+      fd.append('context', f.getAttribute('data-context'));
+      btn.disabled = true;
+      status.textContent = 'Sending…';
+      var req = ENDPOINT === 'demo'
+        ? new Promise(function (r) { setTimeout(r, 600); })
+        : fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(fd) });
+      req.then(function () {
+        f.querySelectorAll('input, button').forEach(function (el) { el.disabled = true; });
+        status.textContent = 'Thank you. Someone will reach out to you soon. We’re praying for you.';
+      }).catch(function () {
+        btn.disabled = false;
+        status.textContent = 'Something went wrong. Please try again.';
+      });
+    });
+  });
+
   var steps = document.querySelectorAll('.step[data-step]');
   var bar = document.getElementById('pbar');
   var label = document.getElementById('plabel');
